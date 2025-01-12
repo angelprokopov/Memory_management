@@ -13,3 +13,8 @@ This project implements an advanced memory allocator in C++ with features like m
 ## Code Structure
 - `MemoryAllocator.h`: Defines the memory allocator class.
 - `MemoryAllocator.cpp`: Implements allocation, deallocation, and advanced features. Also demonstrates the usage and tests the allocator
+
+## Getting Started
+
+### Prerequisites
+- A C++17-compatible compiler (e.g., GCC, Clang, MSVC).
