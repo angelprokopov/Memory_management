@@ -20,18 +20,18 @@ public:
 	
 	// Advanced memory management functions
 	void* allocateAligned(size_t size, size_t alignment);
-	void retain(void* ptr);
-	int getReferenceCount(void* ptr) const;
-	void defragment();
-	void displayMemoryState() const;
+	void retain(void* ptr); // function to retain the ownership of a block
+	int getReferenceCount(void* ptr) const; // function to get the reference count
+	void defragment(); // compact memory function
+	void displayMemoryState() const; // debugging memory state
 
 private:
 	static const size_t POOL_SIZE = 1024; // total size of the memory pool
-	char memoryPool[POOL_SIZE];
-	bool allocated[POOL_SIZE];
-	std::unordered_map<void*, size_t> allocations;
-	std::unordered_map<void*, int>referenceCounts;
-	std::mutex allocatorMutex;
+	char memoryPool[POOL_SIZE]; // memory pool
+	bool allocated[POOL_SIZE]; // allocation tracker
+	std::unordered_map<void*, size_t> allocations; // tracking the allocations (for debugging purposes)
+	std::unordered_map<void*, int> referenceCounts; // Tracker for reference count
+	std::mutex allocatorMutex; // Mutex for thread safety
 };
 
 
